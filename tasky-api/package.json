@@ -10,7 +10,6 @@
     "start": "babel-node index.js",
     "dev": "nodemon --exec npm start"
   },
-
   "dependencies": {
     "acorn": "^8.16.0",
     "acorn-jsx": "^5.3.2",
@@ -238,6 +237,7 @@
     "unicode-property-aliases-ecmascript": "^2.2.0",
     "update-browserslist-db": "^1.2.3",
     "uri-js": "^4.4.1",
+    "uuid": "^13.0.0",
     "v8flags": "^3.2.0",
     "which": "^2.0.2",
     "which-boxed-primitive": "^1.1.1",
