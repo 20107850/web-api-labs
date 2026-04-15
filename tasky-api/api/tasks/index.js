@@ -65,23 +65,18 @@ router.delete('/:id', (req, res) => {
 });
 
 router.post('/', (req, res) => {
-  const now = new Date().toISOString();
+    const now = new Date().toISOString();
 
-  const newTask = {
-    id: String(tasksData.total_results + 1),
-    title: req.body.title,
-    description: req.body.description,
-    deadline: req.body.deadline,
-    priority: req.body.priority,
-    done: req.body.done,
-    created_at: now,
-    updated_at: now
-  };
+    const newTask = {
+        id: String(tasksData.total_results + 1),
+        ...req.body,
+        created_at: now,
+        updated_at: now
+    };
 
-  tasksData.tasks.push(newTask);
-  tasksData.total_results++;
-
-  res.status(201).json(newTask);
+    tasksData.tasks.push(newTask);
+    tasksData.total_results++;
+    res.status(201).json(newTask);
 });
 
 
