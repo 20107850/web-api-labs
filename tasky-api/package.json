@@ -48,6 +48,7 @@
     "convert-source-map": "^2.0.0",
     "core-js": "^3.49.0",
     "core-js-compat": "^3.49.0",
+    "cors": "^2.8.6",
     "cross-spawn": "^7.0.6",
     "data-view-buffer": "^1.0.2",
     "data-view-byte-length": "^1.0.2",
