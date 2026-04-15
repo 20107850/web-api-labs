@@ -21,18 +21,18 @@ router.get('/:id', (req, res) => {
 
 //Add a task
 router.post('/', (req, res) => {
-    const { title, description, deadline, priority, done } = req.body;
+    const now = new Date().toISOString();
+
     const newTask = {
-        id: uuidv4(),
-        title,
-        description,
-        deadline,
-        priority,
-        done
+        id: String(tasksData.total_results + 1),
+        ...req.body,
+        created_at: now,
+        updated_at: now
     };
+
     tasksData.tasks.push(newTask);
-    res.status(201).json(newTask);
     tasksData.total_results++;
+    res.status(201).json(newTask);
 });
 
 //Update an existing task
@@ -62,21 +62,6 @@ router.delete('/:id', (req, res) => {
     tasksData.tasks.splice(taskIndex, 1);
     res.status(204).send();
     tasksData.total_results--;
-});
-
-router.post('/', (req, res) => {
-    const now = new Date().toISOString();
-
-    const newTask = {
-        id: String(tasksData.total_results + 1),
-        ...req.body,
-        created_at: now,
-        updated_at: now
-    };
-
-    tasksData.tasks.push(newTask);
-    tasksData.total_results++;
-    res.status(201).json(newTask);
 });
 
 
