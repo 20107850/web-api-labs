@@ -1,7 +1,6 @@
 import { useContext } from "react"; 
 import { useNavigate, Link } from "react-router";
 import { AuthContext } from "../contexts/authContext";
-import Header from "./components/SiteHeader";
 
 const Header = () => {
   const context = useContext(AuthContext);
